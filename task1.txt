@@ -6,7 +6,7 @@ AUTHENTICATION API's
 
 1. API :   /api/auth/signup  (Method : POST)
 
-req body : {name, email, password, role}
+req body : {name, email, password, role }
 
 response : if successful => "user registered successfully"
  
