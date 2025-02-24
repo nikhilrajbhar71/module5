@@ -1,0 +1,76 @@
+
+
+// user registration and authentication api
+AUTHENTICATION API's
+
+
+1. API :   /api/auth/signup  (Method : POST)
+
+req body : {name, email, password, role}
+
+response : if successful => "user registered successfully"
+ 
+user has already registered => "user already exist, please login"
+
+
+2. API :   /api/auth/login    (Method : POST)
+req body : {email, password}
+
+if successful => return JSON web token + required details such as user id 
+otherwise show the error/response
+
+
+
+CATEGORIES API's
+
+
+3. /api/categories/create     (METHOD : POST)          (api to create categories)
+
+req body : name
+
+response : "categories created successfully"
+
+4.    /api/categories/getallcategories ( METHOD : GET)
+   
+response :  [ { id, name, author_id } ]
+
+
+
+POSTS API's
+
+ 
+5. /api/posts/create (we will use a middleware which ensures only authors can create a post) (METHOD : POST)
+
+req body: {title, content, category_id, banner_image}
+
+6. /api/post/:id/status (PUT) (will add a middle which ensures that only authors can do this) (METHOD : PUT)
+
+req body : {is_published : "true/false"}
+
+7. /api/posts/getallposts (GET)
+
+8. /api/posts/:id (GET) (to get a specific post)  (METHOD : GET)
+
+LIKES 
+
+9. /api/posts/:id/like   (METHOD : POST)
+
+
+Comment
+10. /api/posts/:id/comment   (METHOD : POST)
+req body  : {comment}
+
+subscribe 
+ 11 . /api/authors/:id/subscribe   (METHOD: POST)
+
+
+get all post (specific category) (METHOD : GET)
+12. /api/posts/getallposts?category=educational
+
+Fetching user profile  (METHOD : GET)
+13. /api/user/profile/:id    
+
+
+
+
+
